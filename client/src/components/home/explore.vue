@@ -6,8 +6,13 @@
                <div  v-for="exp in explore" :key="exp">
                     <p class="hover:text-yellow-500">{{ exp.icon }}{{ exp.text }}</p>
                 </div> 
+            </div>  
+        </div>
+        <div class="mx-40 grid grid-cols-3">
+            <div v-for="card in cards" class="relative" :key="card">
+                <img class="w-full card" :src="card.img" alt="">
+                <h1 class="bg-black text-white absolute bottom-0 w-full h-16 px-12 py-4 text-xl uppercase bg-opacity-40">{{ card.title }}</h1>
             </div>
-            
         </div>
     </div>
 </template>
@@ -36,6 +41,32 @@ export default {
                     text:"BUILD-TO-RENT",
                     icon:"👜", 
                 }
+            ],
+            cards: [
+                {
+                    title: 'APEX HOUSE, WIMBLEY',
+                    img: require('../../assets/building2.jpg')
+                },
+                {
+                    title: 'Mountearl Gardens, Streatham',
+                    img: require('../../assets/building3.jpg')
+                },
+                {
+                    title: 'GEORGE STREET, CROYDON',
+                    img: require('../../assets/building4.jpg')
+                },
+                {
+                    title: 'Battersea Power Station, Battersea',
+                    img: require('../../assets/building5.jpg')
+                },
+                {
+                    title: 'Chelsea Barracks, City of Westminster',
+                    img: require('../../assets/building6.jpg')
+                },
+                {
+                    title: 'Chapter, Lewisham',
+                    img: require('../../assets/building7.jpg')
+                }
             ]
         }
     },
@@ -46,5 +77,8 @@ export default {
     margin-left: 535px;
     margin-right: 535px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card{
+    height: 570px;
 }
 </style>
