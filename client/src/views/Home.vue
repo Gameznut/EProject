@@ -11,17 +11,20 @@
       </div>
     </div>
     <Ways />
+    <Explore />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Ways from '@/components/home/ways.vue'
+import Explore from '@/components/home/explore.vue'
 
 export default {
   name: "Home",
   components: {
     Ways,
+    Explore
   },
 };
 </script>
