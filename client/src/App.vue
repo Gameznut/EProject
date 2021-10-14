@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <router-view />
+    <router-view class="bg-gray-400" />
   </div>
 </template>
 <script>
