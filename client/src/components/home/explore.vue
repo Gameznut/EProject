@@ -55,13 +55,13 @@
       <li class="splide__slide bg-yellow-600 m-2 p-10">Slide 09</li>
     </SplideSlide>
 
-
-
-    <template class="" #after-track>
-      <div class="splide__progress">
+<div class="splide__progress">
 		    <div class="splide__progress__bar bg-red-500 bg-gradient-to-r from-red-500 via-purple-600 to-gray-400">
 		    </div>
       </div>
+
+    <template class="" #after-slider>
+      
       <div class="splide__autoplay flex i justify-around">
         <button class="splide__play">Play</button>
         <button class="splide__pause">Pause</button>
@@ -191,6 +191,7 @@ export default {
         perMove: 2,
         pauseOnHover : true,
         resetProgress: false,
+        hasSliderWrapper: true
       },
       datas: ''
     };
