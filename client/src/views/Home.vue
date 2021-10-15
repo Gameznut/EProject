@@ -10,13 +10,13 @@
         </h1>
       </div>
     </div>
+
     <Ways />
     <Explore />
     <About />
     <Certificate />
   </div>
 </template>
-
 <script>
 // @ is an alias to /src
 import Ways from "@/components/home/ways.vue";
@@ -26,6 +26,18 @@ import Certificate from "@/components/home/certificate.vue";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      options: {
+        rewind: true,
+        gap: "1rem",
+        autoplay: true,
+        pauseOnHover: false,
+        arrows: "slider",
+        height: "15rem",
+      },
+    };
+  },
   components: {
     Ways,
     Explore,

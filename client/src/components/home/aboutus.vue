@@ -5,7 +5,7 @@
         <h1 class="text-blue-400 text-5xl mb-10">ABOUT US</h1>
         <div class="my-4">
           <h1 class="text-3xl text-white mb-2">DEVELOPMENT</h1>
-          <p class="text-white text-sm">
+          <p data-aos="fade-UP" class="text-white text-sm">
             Our Development Teams have experience in delivering high profile,
             quality projects, safely, sustainably and efficiently, across a
             range of market sectors. We lead projects from initial feasibility
@@ -43,3 +43,12 @@
   height: 100%;
 }
 </style>
+<script>
+import AOS from "aos";
+import "aos/dist/aos.css";
+export default {
+  mounted() {
+    AOS.init();
+  },
+};
+</script>
