@@ -15,6 +15,7 @@
     "aos": "^2.3.4",
     "autoprefixer": "^9",
     "core-js": "^3.6.5",
+    "locomotive-scroll": "^4.1.2",
     "postcss": "^7",
     "swiper": "^7.0.8",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",

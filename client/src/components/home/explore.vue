@@ -1,5 +1,76 @@
 <template>
   <div class="">
+
+    <div class="splide" data-aos =" zoom-out" data-aos-duration="1000">
+  <div class="splide__track px-12">
+		<ul class="splide__list">
+			<li class="splide__slide bg-gray-800 m-2 p-10">Slide 01</li>
+			<li class="splide__slide bg-gray-700 m-2 p-10">Slide 02</li>
+			<li class="splide__slide bg-blue-800 m-2 p-10">Slide 03</li>
+      <li class="splide__slide bg-gray-800 m-2 p-10">Slide 01</li>
+      <li class="splide__slide bg-gray-700 m-2 p-10">Slide 02</li>
+      <li class="splide__slide bg-gray-300 m-2 p-10">Slide 03</li>
+      <li class="splide__slide bg-gray-600 m-2 p-10">Slide 04</li>
+      <li class="splide__slide bg-gray-800 m-2 p-10">Slide 06</li>
+      <li class="splide__slide bg-blue-700 m-2 p-10">Slide 05</li>
+      <li class="splide__slide bg-green-300 m-2 p-10">Slide 08</li>
+      <li class="splide__slide bg-yellow-600 m-2 p-10">Slide 09</li>
+		</ul>
+  </div>
+</div>
+<div
+    data-aos="fade-up"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center"
+  >
+  
+<Splide class="" :options="options">
+    <SplideSlide class="">
+      <li class="splide__slide bg-gray-800 m-2 p-10">Slide 01</li>
+    </SplideSlide>
+    <SplideSlide class="">
+      <li class="splide__slide bg-gray-700 m-2 p-10">Slide 02</li>
+    </SplideSlide>
+    <SplideSlide class="">
+      <li class="splide__slide bg-gray-300 m-2 p-10">Slide 03</li>
+    </SplideSlide>
+    <SplideSlide class="">
+      <li class="splide__slide bg-gray-600 m-2 p-10">Slide 04</li>
+    </SplideSlide>
+    <SplideSlide class="">
+      <li class="splide__slide bg-gray-800 m-2 p-10">Slide 06</li>
+    </SplideSlide>
+    <SplideSlide class="">
+      <li class="splide__slide bg-blue-700 m-2 p-10">Slide 05</li>
+    </SplideSlide>
+    <SplideSlide class="">
+      <li class="splide__slide bg-green-300p-10 m-2 p-10">Slide 08</li>
+    </SplideSlide>
+    <SplideSlide class="">
+      <li class="splide__slide bg-yellow-600 m-2 p-10">Slide 09</li>
+    </SplideSlide>
+
+
+
+    <template class="" #after-track>
+      <div class="splide__progress">
+		    <div class="splide__progress__bar bg-red-500 bg-gradient-to-r from-red-500 via-purple-600 to-gray-400">
+		    </div>
+      </div>
+      <div class="splide__autoplay flex i justify-around">
+        <button class="splide__play">Play</button>
+        <button class="splide__pause">Pause</button>
+      </div>
+  </template>
+  </Splide>
+</div>
+
+  
     <div class="exp my-10">
       <h1 class="text-4xl w-full my-12 text-blue-900">
         EXPLORE OUR LATEST DEVELOPMENTS & PROJECTS
@@ -50,8 +121,17 @@
       <a href="#">ALL PROJECTS</a>
     </div>
   </div>
+  
 </template>
 <script>
+import Splides from '@splidejs/splide'
+import '@splidejs/splide/dist/css/splide.min.css';
+import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css'
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+//import LocomotiveScroll from 'locomotive-scroll';
+//import 'locomotive-scroll/dist/locomotive-scroll.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 export default {
   data() {
     return {
@@ -103,10 +183,32 @@ export default {
           img: require("../../assets/building7.jpg"),
         },
       ],
+      options:{
+        type   : 'loop',
+        autoplay     : 'pause',
+        perPage: 3,
+        focus  : 'start',
+        perMove: 2,
+        pauseOnHover : true,
+        resetProgress: false,
+      },
+      datas: ''
     };
   },
+  mounted() {
+    new Splides( '.splide' ).mount();
+    AOS.init()
+    // this.datas = new LocomotiveScroll();
+    // const target = document.querySelector('#js-target');
+    // this.datas.scrollTo(target);
+  },
+  components:{
+    SplideSlide,
+    Splide
+  }
 };
 </script>
+
 <style>
 .exp {
   margin-left: 535px;
